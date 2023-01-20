@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Pre Diabetes Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/download.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medicio - v4.10.0
+  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  
+  </header>
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i>24/7
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Call us now +250 76607142
+      </div>
+    </div>
+  </div>
+  <!-- End Header -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="{% url 'index' %}" class="logo me-auto"><img src="" alt="">Pre-Diabetes Prediction</a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="{% url 'index' %}">Home</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
+          <li><a class="nav-link scrollto" href="{% url 'Viewpred' %}">My Info</a></li>
+
+          {% if user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+        </ul>
+        {% endif %}
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+    </div>
+    <main id="main">
+  </header>
+  <section class="container my-2 bg-dark w-100 text-light p-2" id="fom">
+    <form action="result" class="row g-3 p-3 " id="form1">
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Age</label>
+            <input type="number" class="form-control" id="validationCustom01"  value="Mark" placeholder="Your Age Please" required name="n1">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Gender</label>
+            <input type="number" class="form-control" id="validationCustom02" min="0" max="1"   required placeholder="Enter'1' for Female and '0' for Male" name="n2">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Excessive Urine Production</label>
+            <input type="number" class="form-control" id="validationCustom03" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n3">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom04" class="form-label">Excessive Thirst</label>
+            <input type="number" class="form-control" id="validationCustom04" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n4">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom05" class="form-label">Sudden Weight Loss</label>
+            <input type="number" class="form-control" id="validationCustom05" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n5">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom06" class="form-label">Weakness</label>
+            <input type="number" class="form-control" id="validationCustom06" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n6">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom07" class="form-label">Excessive Eating</label>
+            <input type="number" class="form-control" id="validationCustom07" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n7">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom08" class="form-label">Yeast Infection</label>
+            <input type="number" class="form-control" id="validationCustom08" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n8">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom09" class="form-label">Visual Blurring</label>
+            <input type="number" class="form-control" id="validationCustom09" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n9">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom10" class="form-label">Itching</label>
+            <input type="number" class="form-control" id="validationCustom10" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n10">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom11" class="form-label">Irritability</label>
+            <input type="number" class="form-control" id="validationCustom11" min="0" max="1" required placeholder="Enter'1' for True and '0' for False" name="n11">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom12" class="form-label">Delayed Healing</label>
+            <input type="number" class="form-control" id="validationCustom12" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n12">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom13" class="form-label">Partial Paresis</label>
+            <input type="number" class="form-control" id="validationCustom13" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n13">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom14" class="form-label">Muscle Stiffness</label>
+            <input type="number" class="form-control" id="validationCustom14" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n14">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom015" class="form-label">Hair loss</label>
+            <input type="number" class="form-control" id="validationCustom15" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n15">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="validationCustom016" class="form-label">Obesity</label>
+            <input type="number" class="form-control" id="validationCustom16" min="0" max="1"  required placeholder="Enter'1' for True and '0' for False" name="n16">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div class="col-12">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Predict</button>
+          <button type="button" class="btn btn-success" onclick="openPopup() " id="btn" >View Your results</button>
+        </div>
+        <div class="popup" id="popup">
+          <img src="{% static 'assets/img/Tick1.jpg' %}" >
+          <h5>{{result2}}</h5>
+          <!-- <p>You can contact Doctor:+250 7866-07142</p> -->
+          <!-- <div>
+            <table>
+              <tr>
+                <th>Your Age</th>
+              </tr>
+              {% for prediction in predictions %}
+              <tr>
+                <td>{{prediction.Age}}</td>
+              </tr>
+              {% endfor%}
+            </table>
+          </div> -->
+          <button type="button" onclick="closePopup()">Done</button>
+
+        </div>
+      </form>
+      
+
+      
+  </section>
+  
+
+  <!-- Footer -->
+  
+<script>
+let popup = document.getElementById("popup");
+
+function openPopup(){
+  popup.classList.add("open-popup");
+}
+function closePopup(){
+  popup.classList.remove("open-popup");
+}
+function fluidBackground() {
+  document.btn.style.backgroundSize = "cover";
+}
+
+document.getElementById("open-popup").onclick = function() {
+  openPopup();
+  closePopup()
+  fluidBackground();
+};
+
+
+</script>
+
+</body>
+
+</html>
