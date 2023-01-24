@@ -73,38 +73,46 @@
     </div>
   </header><!-- End Header -->
   <!---Login Section-->
-    <section class="vh-100 bg-image" 
+  <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-80">
-      <div class="row d-flex justify-content-center align-items-center h-80">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Login Here!</h2>
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
               <form method="post">
                 {% csrf_token %}
-                       
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example1cg">Username</label>
-                  <input type="text" name="username" id="form3Example1cg" class="form-control form-control-lg" />
+                <div class="form-outline mb-6">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">Your UserName</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example4cg">Password</label>
-                  <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
+                <div class="form-outline mb-6">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
 
+                <div class="form-outline mb-6">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                </div>
+
+                <div class="form-outline mb-6">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                </div>
 
                 <div class="d-flex justify-content-center">
-                  <input type="submit" value="Login" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
-                  <!-- <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign-In</button> -->
+                  <button type="button"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                    
                 </div>
-
-                <p class="text-center text-muted mt-5 mb-0">Don't you Have  an account? <a href="{% url 'signup' %}"
-                    class="fw-bold text-body"><u>Register here</u></a></p>
+                
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{% url 'login' %}"
+                  class="fw-bold text-body"><u>Login here</u></a></p>
 
               </form>
 
@@ -115,7 +123,7 @@
     </div>
   </div>
 </section>
-<!--Footer-->
+<!-- Footer
 <footer id="footer">
   <div class="footer-top">
     <div class="container">
@@ -138,9 +146,9 @@
               <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-4 col-md-6 footer-links">
+        <!-- <div class="col-lg-4 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
             <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
@@ -156,7 +164,7 @@
           </form>
 
         </div> -->
-
+<!-- 
       </div>
     </div>
   </div>
@@ -169,9 +177,9 @@
       Designed by <a href="">BBK</a>
     </div>
   </div>
-</footer><!-- End Footer -->
-    <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</footer>End Footer -->
+    <!-- <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> --> -->
 
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>

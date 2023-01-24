@@ -13,6 +13,7 @@ urlpatterns = [
     path('predict',predict,name="predict"),
     path('Viewpred',Viewpred,name="Viewpred"),
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    path('signup',signup,name="signup"),
 
      
   

@@ -10,11 +10,7 @@ class User(AbstractUser):
         ('Male','Male'),
         ('Female','Female')
     )
-    # ROLE = (
-    #     ('User','User')
-    #     ('doctor','doctor')
-
-    # )
+    
     gender=models.CharField(max_length=30,choices=GENDER)
     phone=models.IntegerField(null=True,blank=False)
     # role=models.CharField(max_length=30,choices=ROLE)

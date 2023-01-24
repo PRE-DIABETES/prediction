@@ -44,7 +44,7 @@ def login_request(request):
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				login(request, user)
-				messages.info(request, f"You are now logged in as {username}.")
+				messages.success(request, f"You are now logged in as {username}.")
 				print(user.is_staff)
 				if user.is_staff == False:
 					return redirect("inner")
@@ -82,6 +82,9 @@ def inner(request):
 	# def home(request):
     # return django.shortcuts.render(request, 'home.html')
 
+
+def signup(request):
+    return render(request,'prediction/signup.html')
 
 
 @login_required(login_url = 'login')
