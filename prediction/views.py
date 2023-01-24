@@ -86,6 +86,9 @@ def inner(request):
 def signup(request):
     return render(request,'prediction/signup.html')
 
+def view(request):
+    return render(request,'prediction/view.html')    
+
 
 @login_required(login_url = 'login')
 def result(request):
@@ -159,7 +162,7 @@ def result(request):
         Partial_paresis = val13,
         Muscle_stiffiness= val14,
         Hair_loss = val15,
-        Obesity= val16
+        Obesity= val16,
      )
     
     data.save()

@@ -18,10 +18,7 @@ class User(AbstractUser):
 
 class PredictionTable(models.Model):
     
-    # #
-    # # id = models.AutoField(primary_key=True)
-    # id = models.AutoField(primary_key=True)
-    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    patient = models.CharField(max_length=200, default='admin')
     Age = models.CharField(max_length=100)
     Sex = models.CharField(max_length=100)
     Excessive_urine = models.CharField(max_length=100)

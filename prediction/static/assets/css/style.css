@@ -1884,15 +1884,14 @@ section {
   color: #333;
   visibility: hidden;
   transition:transform 0.4s, top 0.4s;
-  opacity: 0.6;
-
+  
 }
 
 .open-popup{
   visibility: visible;
   top: 50%;
   transform: translate(-50%,-50%) scale(1);
-  opacity: 0.6;
+  
 
   
   
@@ -1929,6 +1928,7 @@ section {
 }
 
 
+
 /* .form-control span{
   position: absolute;
   bottom: 12px;
@@ -1940,7 +1940,3 @@ section {
 } */
 
 
-.user-field input{
-  width: 100%;
-  background-color: #18d26e;
-}
