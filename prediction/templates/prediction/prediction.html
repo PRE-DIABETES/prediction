@@ -72,7 +72,7 @@
           {% endif %}</li>
           <li><a class="nav-link scrollto " href="{% url 'index' %}">Home</a></li>
           <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
-          <li><a class="nav-link scrollto" href="{% url 'Viewpred' %}">My Info</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'view' %}">My Info</a></li>
 
           {% if user.is_authenticated %}
           <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>

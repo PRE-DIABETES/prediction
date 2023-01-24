@@ -35,6 +35,7 @@ class PredictionTable(models.Model):
     Muscle_stiffiness = models.CharField(max_length=100)
     Hair_loss = models.CharField(max_length=100)
     Obesity = models.CharField(max_length=100)
+    result = models.CharField(max_length=20, null=True, blank=True)
     
 
 

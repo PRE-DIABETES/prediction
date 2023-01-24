@@ -87,7 +87,12 @@ def signup(request):
     return render(request,'prediction/signup.html')
 
 def view(request):
-    return render(request,'prediction/view.html')    
+    username = request.user.username
+    userInfo = PredictionTable.objects.filter(patient=username)
+    context ={
+        'userInfo':userInfo,
+    }
+    return render(request,'prediction/view.html', context)    
 
 
 @login_required(login_url = 'login')
@@ -144,6 +149,8 @@ def result(request):
     val15 = request.GET['n15']
     val16 = request.GET['n16']
 
+    patient = request.user.username
+
     
     data = PredictionTable.objects.create(
         
@@ -163,6 +170,7 @@ def result(request):
         Muscle_stiffiness= val14,
         Hair_loss = val15,
         Obesity= val16,
+        patient = patient,
      )
     
     data.save()
@@ -177,7 +185,6 @@ def result(request):
         result1 = "You have 93% risks of having diabetes,You can reach to your nearest hospital to take a test! "
     else:
         result1 = "You have no risk of diabetes "
-    
     
     context = {
        

@@ -103,27 +103,124 @@
                 <th scope="col th-sm">Muscle_stiffiness</th>
                 <th scope="col th-sm">Hair_loss</th>
                 <th scope="col th-sm">Obesity</th>
+                <!-- <th scope="col th-sm">Results</th> -->
               </tr>
             </thead>
             <tbody>
+              {% for info in userInfo %}
               <tr class="table-info">
-                <td>24</td>
+                <td>{{ info.Age }}</td>
+
+                {% if info.Sex == '0' %}
                 <td>Male</td>
+                {% else %}
+                <td>Female</td>
+                {% endif  %}
+
+                {% if info.Excessive_urine == '0' %}
                 <td>No</td>
+                {% else %}
                 <td>Yes</td>
-                <td>Yes</td>
+                {% endif %}
+
+                
+
+                {% if info.Excessive_thirst == '0' %}
                 <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+                
+
+                {% if info.Sudden_Weight_loss == '0' %}
                 <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+
+                
+
+                {% if info.Weakness == '0' %}
                 <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+
+                
+                {% if info.Excessive_eating == '0' %}
                 <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+
+                
+                {% if info.Yeast_infection == '0' %}
+                <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+
+                
+                {% if info.Visual_blurring == '0' %}
+                <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+
+                
+                {% if info.Itching == '0' %}
+                <td>No</td>
+                {% else %}
                 <td>Yes</td>
+                {% endif %}
+
+                
+                {% if info.Irritability == '0' %}
+                <td>No</td>
+                {% else %}
+                <td>Yes</td>
+                {% endif %}
+
+              
+                {% if info.Delaed_healing == '0' %}
+                <td>No</td>
+                {% else %}
+                <td>Yes</td>
+                {% endif %}
+
+                
+                {% if info.Partial_paresis == '0' %}
+                <td>No</td>
+                {% else %}
+                <td>Yes</td>
+                {% endif %}
+
+                {% if info.Muscle_stiffiness == '0' %}
+                <td>No</td>
+                {% else %}
+                <td>Yes</td>
+                {% endif %}
+
+               
+
+                {% if info.Hair_loss == '0' %}
+                <td>No</td>
+                {% else %}
+                <td>Yes</td>
+                {% endif %}
+
+                
+
+                {% if info.Obesity == '0' %}
+                <td>No</td>
+                {% else %}
+                <td>Yes</td>
+                {% endif %}
+                <!-- <td>{{info.result}}</td> -->
               </tr>
+              {% endfor %}
+
+
             </tbody>
           </table>  
           </div>
