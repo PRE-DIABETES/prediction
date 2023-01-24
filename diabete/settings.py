@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'prediction',
+    'crispy_forms',
+    'crispy_tailwind',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_URL  = '/auth/login'
 AUTH_USER_MODEL = 'prediction.User'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
